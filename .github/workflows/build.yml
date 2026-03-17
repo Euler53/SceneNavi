@@ -22,4 +22,10 @@ jobs:
 
       - name: Build
         run: msbuild SceneNavi.sln /p:Configuration=Release
-        
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SceneNavi-build
+          path: |
+            **/bin/Release/**
