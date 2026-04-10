@@ -374,7 +374,7 @@ namespace SceneNavi.ROMHandler
                                 DMATableEntry dma = Files.OrderBy(x => x.VStart).FirstOrDefault(x => x.FileType == DMATableEntry.FileTypes.Scene);
 
                                 /* NTSC1.0 (CZLE v0) uses a fixed scene table offset in the code file */
-                                if (GameID == "CZLE" && Version == 0)
+                                if (GameID.StartsWith("CZL") && Version == 0)
                                 {
                                         SceneTableAddress = 0xEA440;
                                 }
